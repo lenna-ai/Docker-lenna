@@ -1,6 +1,6 @@
 <table>
   <tr>
-    <td valign="top"><img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/s07gypqdcrqwqxewjjct" alt="lenna-logo"></td>
+    <td valign="top"><img src="https://lenna.ai/wp-content/uploads/2023/02/logo-lenna-1-1-gambar-01.png" alt="lenna-logo" width="350"></td>
     <td valign="top"><img src="https://w7.pngwing.com/pngs/219/411/png-transparent-docker-logo-kubernetes-microservices-cloud-computing-dockers-logo-text-logo-cloud-computing-thumbnail.png" alt="lenna-logo"></td>
   </tr>
 </table>
