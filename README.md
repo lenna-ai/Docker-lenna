@@ -1,8 +1,10 @@
-<div style="display: flex;">
-  <p align="center" height="60px"><img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/s07gypqdcrqwqxewjjct" alt="lenna-logo"></p>
-  <p align="center" height="60px"><img src="https://w7.pngwing.com/pngs/219/411/png-transparent-docker-logo-kubernetes-microservices-cloud-computing-dockers-logo-text-logo-cloud-computing-thumbnail.png" alt="lenna-logo"></p>
-  
+<div align="center">
+  <div style="display: flex;">
+    <img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/s07gypqdcrqwqxewjjct" alt="lenna-logo">
+    <img src="https://w7.pngwing.com/pngs/219/411/png-transparent-docker-logo-kubernetes-microservices-cloud-computing-dockers-logo-text-logo-cloud-computing-thumbnail.png" alt="lenna-logo">
+  </div>
 </div>
+
 
 # Getting Started your apps with DockerLenna
 
