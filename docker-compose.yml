@@ -21,6 +21,8 @@ services:
     container_name: php-fpm_backend
     build:
       context: .
+      args:
+      - VOLUMES_DRIVER=${VOLUMES_DRIVER}
       dockerfile: Dockerfile
     volumes:
       - ${VOLUMES_DRIVER}:/var/www
