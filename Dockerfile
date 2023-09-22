@@ -47,12 +47,14 @@ RUN docker-php-ext-install \
     && docker-php-ext-enable \
         gd pdo pdo_pgsql pdo_mysql zip sockets  bcmath opcache
 
-RUN echo ${VOLUMES_DRIVER}
+# RUN echo ${VOLUMES_DRIVER}
+
+COPY ${VOLUMES_DRIVER} /var/www
 
 RUN usermod -u 1000 www-data
 RUN rm -rf /var/cache/apk/*
-ADD ${VOLUMES_DRIVER} /var/www
-RUN chown -R www-data:www-data /var/www/backend
+# ADD ${VOLUMES_DRIVER} /var/www
+RUN chown -R www-data:www-data /var/www/
 RUN chown www-data:www-data /var/www/backend
 RUN chmod -R 777 /var/www
 
