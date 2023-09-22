@@ -11,7 +11,7 @@ services:
       - "443:443"
     volumes:
       - ${VOLUMES_DRIVER}:/var/www/
-      - ./docker/nginx/conf.d/default.conf:/etc/nginx/conf.d/
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - app-network
     depends_on:
