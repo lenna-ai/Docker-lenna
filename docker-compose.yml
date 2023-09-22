@@ -10,7 +10,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ${VOLUMES_DRIVER}:/var/www/
+      - ${VOLUMES_DRIVER}/:/var/www/
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - app-network
@@ -25,7 +25,7 @@ services:
       - VOLUMES_DRIVER=${VOLUMES_DRIVER}
       dockerfile: Dockerfile
     volumes:
-      - ${VOLUMES_DRIVER}:/var/www
+      - ${VOLUMES_DRIVER}/:/var/www/
       - ./docker/php/7.4/php.ini:/usr/local/etc/php/php.ini
     environment:
       - PHP_DATE_TIMEZONE=Asia/Jakarta
@@ -60,7 +60,7 @@ services:
       context: . # Direktori tempat Dockerfile Supervisor berada
       dockerfile: supervisor.Dockerfile # Nama Dockerfile Supervisor yang berbeda
     volumes:
-      - ${VOLUMES_DRIVER}:/var/www
+      - ${VOLUMES_DRIVER}/:/var/www
     networks:
       - app-network
 
