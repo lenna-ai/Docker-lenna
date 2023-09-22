@@ -11,7 +11,8 @@ services:
       - "443:443"
     volumes:
       - ${VOLUMES_DRIVER}:/var/www/
-      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+      - ./docker/nginx/conf.d/default.conf:/etc/nginx/conf.d/
+      - ./docker/nginx/conf.d/nginx.conf:/etc/nginx/
     networks:
       - app-network
     depends_on:
@@ -27,6 +28,7 @@ services:
     volumes:
       - ${VOLUMES_DRIVER}:/var/www
       - ./docker/php/7.4/php.ini:/usr/local/etc/php/php.ini
+      - ./docker/php/7.4/php-fpm.conf:/usr/local/etc/php-fpm.conf
     environment:
       - PHP_DATE_TIMEZONE=Asia/Jakarta
       - PHP_DISPLAY_ERRORS=On

@@ -39,13 +39,13 @@ RUN apt-get install autoconf
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN pecl install grpc
+#RUN pecl install grpc
 
 
 RUN docker-php-ext-install \
         gd pdo pdo_pgsql pdo_mysql zip sockets bcmath opcache\
     && docker-php-ext-enable \
-        gd pdo pdo_pgsql pdo_mysql zip sockets grpc bcmath opcache
+        gd pdo pdo_pgsql pdo_mysql zip sockets  bcmath opcache
 
 RUN echo ${VOLUMES_DRIVER}
 
@@ -54,6 +54,7 @@ RUN rm -rf /var/cache/apk/*
 ADD ${VOLUMES_DRIVER} /var/www
 RUN chown -R www-data:www-data /var/www
 RUN chmod -R 777 /var/www
+
 # RUN composer install -d=/var/www/backend
 
 USER www-data
