@@ -55,7 +55,7 @@ RUN usermod -u 1000 www-data
 RUN rm -rf /var/cache/apk/*
 # ADD ${VOLUMES_DRIVER} /var/www
 RUN chown -R www-data:www-data /var/www/
-RUN chown www-data:www-data /var/www/backend
+RUN chown www-data:www-data /var/www/
 RUN chmod -R 777 /var/www
 
 # RUN composer install -d=/var/www/backend
