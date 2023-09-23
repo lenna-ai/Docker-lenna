@@ -22,13 +22,17 @@ In the project directory, you can run:
 
 *** step 1 ***
 ```
-$ docker network create -d bridge app-network
+$ sudo docker network create -d bridge app-network
 ```
-
 
 *** step 2 ***
 ```
-$ docker-compose up -d --no-deps --build
+$ sudo docker-compose build
+```
+
+*** step 3 ***
+```
+$ sudo docker-compose up -d --no-deps
 ```
 
 ## Contributor
