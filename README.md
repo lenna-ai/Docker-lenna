@@ -20,17 +20,17 @@ This project was bootstrapped with [Docker-hub](https://hub.docker.com).
 
 In the project directory, you can run:
 
-*** step 1 ***
+***step 1***
 ```
 $ sudo docker network create -d bridge app-network
 ```
 
-*** step 2 ***
+***step 2***
 ```
 $ sudo docker-compose build --no-cache
 ```
 
-*** step 3 ***
+***step 3***
 ```
 $ sudo docker-compose up -d --no-deps
 ```
