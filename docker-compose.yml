@@ -29,8 +29,8 @@ services:
       context: .
       args:
       - VOLUMES_DRIVER=${VOLUMES_DRIVER}
-      - PUID=${PHP_WORKER_PUID}
-      - PGID=${PHP_WORKER_PGID}
+      - PUID=${PHP_FPM_PUID}
+      - PGID=${PHP_FPM_PGID}
       dockerfile: Dockerfile
     volumes:
       - ${VOLUMES_DRIVER}/:/var/www/
