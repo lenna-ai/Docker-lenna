@@ -27,7 +27,7 @@ $ sudo docker network create -d bridge app-network
 
 *** step 2 ***
 ```
-$ sudo docker-compose build
+$ sudo docker-compose build --no-cache
 ```
 
 *** step 3 ***
