@@ -12,12 +12,13 @@ This project was bootstrapped with [Docker-hub](https://hub.docker.com).
 
 ## Available Multiple Project
 **how to setup project default**
+```bash
 .
 ├── dir1
 │   ├── Docker-arifin-lenna
 │   └── project-1
 │   └── project-2
-
+```
 ## Available Scripts
 
 In the project directory, you can run:
