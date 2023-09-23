@@ -2,6 +2,8 @@ version: "3.8"
 name: nrarivin-backend-devops
 services:
   webserver_backend:
+    build:
+      context: ./docker/nginx
     image: nginx:alpine
     container_name: webserver_backend
     restart: unless-stopped

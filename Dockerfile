@@ -49,7 +49,9 @@ RUN docker-php-ext-install \
 
 # RUN echo ${VOLUMES_DRIVER}
 
-RUN usermod -u 1000 www-data
+# RUN usermod -u 1000 www-data
+RUN groupmod -o -g 1000 www-data && \
+    usermod -o -u 1000 -g www-data www-data
 RUN rm -rf /var/cache/apk/*
 ADD ${VOLUMES_DRIVER} /var/www
 RUN chown -R www-data:www-data /var/www/
