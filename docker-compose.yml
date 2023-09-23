@@ -4,6 +4,10 @@ services:
   webserver_backend:
     build:
       context: ./docker/nginx
+      args:
+        - http_proxy
+        - https_proxy
+        - no_proxy
     image: nginx:alpine
     container_name: webserver_backend
     restart: unless-stopped
