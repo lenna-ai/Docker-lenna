@@ -1,4 +1,6 @@
 ARG VOLUMES_DRIVER
+ARG PUID
+ARG PGID
 FROM php:7.4-fpm
 
 LABEL maintainer="Nur Arifin <arifin@lenna.ai>"
