@@ -18,10 +18,21 @@ services:
     volumes:
       - ${VOLUMES_DRIVER}/:/var/www/
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+      - ./docker/certbot/conf/:/etc/nginx/ssl/
+      - ./docker/dhparam/:/etc/nginx/dhparam
+      - ./docker/certbot/data/:/usr/share/nginx/html/letsencrypt
     networks:
       - app-network
     depends_on:
       - php-fpm_backend
+
+  certbot:
+    image: certbot/certbot:latest
+    command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email rio@dimasrio.com --agree-tos --no-eff-email -d centz.dimasrio.com
+    volumes:
+      - ./docker/certbot/conf/:/etc/letsencrypt
+      - ./docker/certbot/logs/:/var/log/letsencrypt
+      - ./docker/certbot/data:/usr/share/nginx/html/letsencrypt
 
   php-fpm_backend:
     container_name: php-fpm_backend

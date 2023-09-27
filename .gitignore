@@ -1,2 +1,4 @@
 /images
 /docker/cache
+/docker/certbot
+/docker/dhparam/*
