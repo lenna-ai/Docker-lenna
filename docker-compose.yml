@@ -20,6 +20,7 @@ services:
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
       - ./docker/certbot/:/var/www/certbot/
       - /etc/letsencrypt/:/etc/nginx/ssl/
+      - /etc/letsencrypt/:/etc/letsencrypt
     networks:
       - app-network
     depends_on:
