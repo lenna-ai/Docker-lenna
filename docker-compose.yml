@@ -18,8 +18,8 @@ services:
     volumes:
       - ${VOLUMES_DRIVER}/:/var/www/
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
-      - ./docker/certbot/:/var/www/certbot/:ro
-      - ./docker/certbot/conf/:/etc/nginx/ssl/:ro
+      - ./docker/certbot/:/var/www/certbot/
+      - ./etc/letsencrypt/:/etc/nginx/ssl/
     networks:
       - app-network
     depends_on:
@@ -30,7 +30,7 @@ services:
     command: certonly --webroot -w /var/www/certbot --force-renewal --email arifin@lenna.ai -d api.lenna.ai --agree-tos
     volumes:
       - ./docker/certbot/www:/var/www/certbot
-      - ./docker/certbot/conf/:/etc/letsencrypt
+      - ./etc/letsencrypt/:/etc/letsencrypt
 
   php-fpm_backend:
     container_name: php-fpm_backend
