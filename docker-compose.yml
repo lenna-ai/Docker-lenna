@@ -28,7 +28,7 @@ services:
 
   certbot:
     container_name: certbot_backend
-    image: certbot/certbot:arm64v8-v1.2.0
+    image: certbot/certbot:latest
     command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email arifin@lenna.ai --agree-tos --no-eff-email -d api.lenna.ai
     volumes:
       - ./docker/certbot/conf/:/etc/letsencrypt
