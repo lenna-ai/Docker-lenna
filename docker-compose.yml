@@ -27,9 +27,9 @@ services:
       - php-fpm_backend
 
   certbot:
-    image: certbot/certbot:latest
     container_name: certbot_backend
-    command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email arifin@lenna.ai --agree-tos --no-eff-email
+    image: certbot/certbot:latest
+    command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email arifin@lenna.ai --agree-tos --no-eff-email -d api.lenna.ai
     volumes:
       - ./docker/certbot/conf/:/etc/letsencrypt
       - ./docker/certbot/logs/:/var/log/letsencrypt
