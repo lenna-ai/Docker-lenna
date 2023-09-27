@@ -30,8 +30,6 @@ services:
     image: certbot/certbot:latest
     container_name: certbot_backend
     command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email arifin@lenna.ai --agree-tos --no-eff-email
-    entrypoint: "/bin/sh -c 'while :; do certbot certonly --force-renew; sleep 12h; done'"
-    working_dir: /usr/share/nginx/html/
     volumes:
       - ./docker/certbot/conf/:/etc/letsencrypt
       - ./docker/certbot/logs/:/var/log/letsencrypt
