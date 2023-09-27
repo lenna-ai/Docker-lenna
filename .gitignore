@@ -2,3 +2,4 @@
 /docker/cache
 /docker/certbot
 /docker/dhparam/*
+.env

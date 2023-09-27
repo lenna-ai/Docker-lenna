@@ -30,10 +30,15 @@ $ sudo docker network create -d bridge app-network
 
 ***step 2***
 ```
-$ sudo docker-compose build --no-cache
+$ sudo cp .env.example .env
 ```
 
 ***step 3***
+```
+$ sudo docker-compose build --no-cache
+```
+
+***step 4***
 ```
 $ sudo docker-compose up -d --no-deps
 ```
