@@ -13,8 +13,8 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "443:80"
-      - "444:81"
+      - "80:80"
+      - "443:81"
     volumes:
       - ${VOLUMES_DRIVER}/:/var/www/
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
