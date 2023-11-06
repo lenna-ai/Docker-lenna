@@ -13,7 +13,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "80:80"
+      - "444:80"
       - "443:81"
     volumes:
       - ${VOLUMES_DRIVER}/:/var/www/
