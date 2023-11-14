@@ -6,7 +6,7 @@
     "allowHeaders" : "Origin, Content-Type, X-Auth-Token, X-Requested-With, Accept, Authorization, X-CSRF-TOKEN, X-Socket-Id"
   },
   "authEndpoint": "/broadcasting/auth",
-  "authHost": "localhost",
+  "authHost": "http://localhost",
   "clients": [],
   "database": "redis",
   "databaseConfig": {
