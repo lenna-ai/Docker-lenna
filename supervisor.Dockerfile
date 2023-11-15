@@ -4,7 +4,37 @@ RUN mkdir -p /var/log/supervisor/
 
 RUN apk --no-cache add postgresql-dev
 
-RUN docker-php-ext-install pdo pdo_pgsql
+
+RUN apt-get update
+
+RUN set -eux; \
+    apt-get upgrade -y; \
+    apt-get update; \
+    apt-get install -y\
+        libzip-dev \
+        zip \
+        unzip \
+        supervisor \
+        git \
+        zlib1g-dev \
+        curl \
+        libmemcached-dev \
+        libz-dev \
+        libpq-dev \
+        libjpeg-dev \
+        libpng-dev \
+        libfreetype6-dev \
+        libssl-dev \
+        libwebp-dev \
+        libxpm-dev \
+        libmcrypt-dev \
+        libonig-dev; \
+        rm -rf /var/lib/apt/lists/*
+
+RUN docker-php-ext-install \
+        gd pdo pdo_pgsql pgsql pdo_mysql zip sockets bcmath opcache\
+    && docker-php-ext-enable \
+        gd pdo pdo_pgsql pgsql pdo_mysql zip sockets  bcmath opcache
 
 RUN apk update && apk add --no-cache supervisor
 
