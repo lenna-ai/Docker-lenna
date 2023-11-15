@@ -24,7 +24,6 @@ RUN set -eux; \
         libwebp-dev \
         libxpm-dev \
         libmcrypt-dev \
-        libonig-dev; \
         rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-install pdo pdo_pgsql pgsql
