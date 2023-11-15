@@ -26,7 +26,7 @@ RUN set -eux; \
         libmcrypt-dev \
         rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-install pdo pdo_pgsql pgsql
+RUN docker-php-ext-install pdo pdo_pgsql
 
 RUN apk update && apk add --no-cache supervisor
 
