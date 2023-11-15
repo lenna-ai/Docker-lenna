@@ -38,11 +38,11 @@ COPY ./docker/supervisor/mycronjob.txt /var/spool/cron/crontabs/root
 # RUN crontab /etc/cron.d/crontab
 
 COPY ./docker/supervisor/entry.bash /usr/sbin
-RUN chmod 777 /usr/sbin/entrypoint.bash
+RUN chmod 777 /usr/sbin/entry.bash
 # Apply cron job
 
 
 RUN touch /var/log/cron.log
 RUN chmod -R 777 /var/log/cron.log
-ENTRYPOINT /usr/sbin/entrypoint.bash
+ENTRYPOINT /usr/sbin/entry.bash
 CMD ["/usr/bin/supervisord", "-n", "-c",  "/etc/supervisor/supervisord.conf"]
