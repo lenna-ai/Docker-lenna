@@ -10,32 +10,19 @@ RUN set -eux; \
     apk upgrade; \
     apk update; \
     apk add --no-cache\
-        cron \
-        build-essential \
-        libjpeg62-turbo-dev \
-        libfreetype6-dev \
-        locales \
+        bash \
         libzip-dev \
         zip \
-        jpegoptim optipng pngquant gifsicle \
-        vim \
         unzip \
-        graphviz \
         supervisor \
         git \
-        zlib1g-dev \
         curl \
         libmemcached-dev \
-        libz-dev \
         libpq-dev \
-        libjpeg-dev \
-        libpng-dev \
-        libfreetype6-dev \
-        libssl-dev \
         libwebp-dev \
+        libpng-dev \
         libxpm-dev \
-        libmcrypt-dev \
-        libonig-dev; 
+        libmcrypt-dev 
 
 RUN docker-php-ext-install \
         gd pdo pdo_pgsql pgsql pdo_mysql zip sockets bcmath opcache
@@ -46,15 +33,15 @@ RUN mkdir -p "/etc/supervisor/logs"
 
 COPY ./docker/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 
-
-COPY ./docker/supervisor/mycronjob.txt /etc/cron.d/crontab
+COPY ./docker/supervisor/mycronjob.txt /var/spool/cron/crontabs/root
 RUN chmod 777 /etc/cron.d/crontab
-
+COPY ./docker/supervisor/entry.bash /usr/sbin
+RUN chmod a+x /usr/sbin/entrypoint.bash
 # Apply cron job
 
 RUN crontab /etc/cron.d/crontab
 
 RUN touch /var/log/cron.log
 RUN chmod -R 777 /var/log/cron.log
-
+ENTRYPOINT /usr/sbin/entrypoint.bash
 CMD ["/usr/bin/supervisord", "-n", "-c",  "/etc/supervisor/supervisord.conf"]
