@@ -69,7 +69,7 @@ RUN chmod -R 777 /var/www
 RUN echo "* * * * * php /var/www/cms/index.php Extreport generatechat >> /var/log/cron.log 2>&1" >> /etc/crontab
 
 RUN touch /var/log/cron.log
-
+RUN chmod -R 777 /var/log/cron.log
 # COPY ./docker/supervisor/mycronjob.txt /etc/cron.d/crontab
 # RUN chown -R www-data:www-data /etc/cron.d/crontab
 # RUN chown www-data:www-data /etc/cron.d/crontab
