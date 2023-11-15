@@ -1,12 +1,12 @@
-* 1 * * * cd /var/www/sites/auth && php artisan schedule:run >> /dev/null 2>&1
-* 1 * * * cd /var/www/sites/app && php artisan schedule:run >> /dev/null 2>&1
-* 1 * * * cd /var/www/v3/app && php artisan schedule:run >> /dev/null 2>&1
+* 1 * * * cd /var/www/auth && php artisan schedule:run >> /dev/null 2>&1
+* 1 * * * cd /var/www/app && php artisan schedule:run >> /dev/null 2>&1
+* 1 * * * cd /var/www/app && php artisan schedule:run >> /dev/null 2>&1
 0 0 1 * * /usr/bin/letsencrypt renew >> /var/log/letsencrypt-renew.log
 
-*/15 * * * * php /var/www/html/cms.lenna.ai/index.php Extreport generatechat
-*/15 * * * * php /var/www/html/cms.lenna.ai/index.php Extreport generateemail
-*/30 * * * * php /var/www/html/cms.lenna.ai/index.php Extreport generatediscussion
-*/45 * * * * php /var/www/html/cms.lenna.ai.dev/index.php Extreport generatecomment
-* * * * * php /var/www/html/cms.lenna.ai/index.php Messagestatus broadcast_queue_exec
-* * * * * php /var/www/html/cms.lenna.ai/index.php Messagestatus followup_schedule
-01 0 * * * php /var/www/html/cms.lenna.ai/index.php Extreport generatelivechatexec
+*/15 * * * * php /var/www/cms/index.php Extreport generatechat
+*/15 * * * * php /var/www/cms/index.php Extreport generateemail
+*/30 * * * * php /var/www/cms/index.php Extreport generatediscussion
+*/45 * * * * php /var/www/cms.dev/index.php Extreport generatecomment
+* * * * * php /var/www/cms/index.php Messagestatus broadcast_queue_exec
+* * * * * php /var/www/cms/index.php Messagestatus followup_schedule
+01 0 * * * php /var/www/cms/index.php Extreport generatelivechatexec
