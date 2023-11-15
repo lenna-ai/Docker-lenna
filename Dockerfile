@@ -80,7 +80,13 @@ RUN chmod -R 777 /var/www
 
 # RUN composer install -d=/var/www/backend
 
-RUN echo "* * * * * php /var/www/cms/index.php Extreport generatechat >> /var/log/cron.log 2>&1" >> /etc/crontab
+COPY ./docker/supervisor/mycronjob.txt /etc/cron.d/crontab
+# Give execution rights on the cron job
+RUN chmod 0644 /etc/cron.d/crontab
+
+# Apply cron job
+
+RUN crontab /etc/cron.d/crontab
 
 RUN touch /var/log/cron.log
 RUN chmod -R 777 /var/log/cron.log
