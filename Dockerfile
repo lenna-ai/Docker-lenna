@@ -100,8 +100,8 @@ RUN chmod -R 777 /var/log/cron.log
 USER www-data
 
 EXPOSE 9000
-CMD ["php-fpm"]
-# CMD bash -c "cron && php-fpm"
+# CMD ["php-fpm"]
+CMD bash -c "cron && php-fpm"
 
 
 
