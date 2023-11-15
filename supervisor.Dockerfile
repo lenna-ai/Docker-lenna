@@ -23,8 +23,7 @@ RUN set -eux; \
         libssl-dev \
         libwebp-dev \
         libxpm-dev \
-        libmcrypt-dev \
-        rm -rf /var/lib/apt/lists/*
+        libmcrypt-dev 
 
 RUN docker-php-ext-install \
         gd pdo pdo_pgsql pgsql pdo_mysql zip sockets bcmath opcache
