@@ -10,3 +10,4 @@
 * * * * * php /var/www/cms/index.php Messagestatus broadcast_queue_exec
 * * * * * php /var/www/cms/index.php Messagestatus followup_schedule
 01 0 * * * php /var/www/cms/index.php Extreport generatelivechatexec
+
