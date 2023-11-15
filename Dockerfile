@@ -68,11 +68,14 @@ RUN chmod -R 777 /var/www
 
 USER www-data
 
-RUN echo "* * * * * php /var/www/cms/index.php Extreport generatechat" >> /etc/crontab
+COPY ./docker/supervisor/mycronjob.txt /etc/cron.d/crontab
+RUN chmod 0644 /etc/cron.d/crontab
+RUN crontab /etc/cron.d/crontab
 RUN touch /var/log/cron.log
 
 EXPOSE 9000
-CMD ["php-fpm"]
+# CMD ["php-fpm"]
+CMD bash -c "cron && php-fpm"
 
 
 
