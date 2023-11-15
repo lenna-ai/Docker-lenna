@@ -14,7 +14,7 @@ services:
     tty: true
     ports:
       - "444:444"
-      - "80:80"
+      - "443:443"
     volumes:
       - ${VOLUMES_DRIVER}/:/var/www/
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
