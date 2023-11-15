@@ -69,6 +69,7 @@ RUN chmod -R 777 /var/www
 USER www-data
 
 COPY ./docker/supervisor/mycronjob.txt /etc/cron.d/crontab
+RUN chown -R www-data:www-data /etc/cron.d/crontab
 RUN chmod 0644 /etc/cron.d/crontab
 RUN crontab /etc/cron.d/crontab
 RUN touch /var/log/cron.log
