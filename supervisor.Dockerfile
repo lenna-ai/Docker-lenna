@@ -34,12 +34,13 @@ RUN mkdir -p "/etc/supervisor/logs"
 COPY ./docker/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 
 COPY ./docker/supervisor/mycronjob.txt /var/spool/cron/crontabs/root
-RUN chmod -R 777 /etc/cron.d/crontab
+# RUN chmod -R 777 /etc/cron.d/crontab
+# RUN crontab /etc/cron.d/crontab
+
 COPY ./docker/supervisor/entry.bash /usr/sbin
 RUN chmod a+x /usr/sbin/entrypoint.bash
 # Apply cron job
 
-RUN crontab /etc/cron.d/crontab
 
 RUN touch /var/log/cron.log
 RUN chmod -R 777 /var/log/cron.log
