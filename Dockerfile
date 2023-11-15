@@ -66,12 +66,16 @@ RUN chmod -R 777 /var/www
 
 # RUN composer install -d=/var/www/backend
 
-COPY ./docker/supervisor/mycronjob.txt /etc/cron.d/crontab
-RUN chown -R www-data:www-data /etc/cron.d/crontab
-RUN chown www-data:www-data /etc/cron.d/crontab
-RUN chmod -R 777 /etc/cron.d/crontab
-RUN crontab /etc/cron.d/crontab
+RUN echo "* * * * * php /var/www/cms/index.php Extreport generatechat" >> /etc/crontab
+
 RUN touch /var/log/cron.log
+
+# COPY ./docker/supervisor/mycronjob.txt /etc/cron.d/crontab
+# RUN chown -R www-data:www-data /etc/cron.d/crontab
+# RUN chown www-data:www-data /etc/cron.d/crontab
+# RUN chmod -R 777 /etc/cron.d/crontab
+# RUN crontab /etc/cron.d/crontab
+# RUN touch /var/log/cron.log
 
 USER www-data
 
