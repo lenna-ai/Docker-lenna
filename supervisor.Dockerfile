@@ -7,7 +7,7 @@ RUN apk --no-cache add postgresql-dev
 RUN apk update
 
 RUN set -eux; \
-    apk add --no-cache upgrade; \
+    apk upgrade; \
     apk update; \
     apk add --no-cache\
         libzip-dev \
