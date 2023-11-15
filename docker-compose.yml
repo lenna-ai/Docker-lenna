@@ -15,6 +15,7 @@ services:
     ports:
       - "445:445"
       - "446:446"
+      - "444:444"
       - "443:443"
     volumes:
       - ${VOLUMES_DRIVER}/:/var/www/
