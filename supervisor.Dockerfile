@@ -20,8 +20,6 @@ RUN set -eux; \
         libmemcached-dev \
         libz-dev \
         libpq-dev \
-        libjpeg-dev \
-        libpng-dev \
         libssl-dev \
         libwebp-dev \
         libxpm-dev \
