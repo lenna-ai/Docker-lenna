@@ -18,7 +18,6 @@ RUN set -eux; \
         zlib1g-dev \
         curl \
         libmemcached-dev \
-        libz-dev \
         libpq-dev \
         libwebp-dev \
         libxpm-dev \
