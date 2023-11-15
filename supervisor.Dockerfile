@@ -22,7 +22,6 @@ RUN set -eux; \
         libpq-dev \
         libjpeg-dev \
         libpng-dev \
-        libfreetype6-dev \
         libssl-dev \
         libwebp-dev \
         libxpm-dev \
