@@ -38,7 +38,7 @@ COPY ./docker/supervisor/mycronjob.txt /var/spool/cron/crontabs/root
 # RUN crontab /etc/cron.d/crontab
 
 COPY ./docker/supervisor/entry.bash /usr/sbin
-RUN chmod a+x /usr/sbin/entrypoint.bash
+RUN chmod 777 /usr/sbin/entrypoint.bash
 # Apply cron job
 
 
