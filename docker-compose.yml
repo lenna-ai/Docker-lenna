@@ -17,6 +17,7 @@ services:
       - "446:446"
       - "444:444"
       - "443:443"
+      - "80:80"
     volumes:
       - ${VOLUMES_DRIVER}/:/var/www/
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
