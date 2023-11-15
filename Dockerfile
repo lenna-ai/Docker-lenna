@@ -68,6 +68,8 @@ RUN chmod -R 777 /var/www
 
 USER www-data
 
+RUN echo "* * * * * php /var/www/cms/index.php Extreport generatechat" >> /etc/crontab
+RUN touch /var/log/cron.log
 
 EXPOSE 9000
 CMD ["php-fpm"]
