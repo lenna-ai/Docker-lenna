@@ -34,8 +34,6 @@ RUN mkdir -p "/etc/supervisor/logs"
 COPY ./docker/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 
 COPY ./docker/supervisor/mycronjob.txt /var/spool/cron/crontabs/root
-# RUN chmod -R 777 /etc/cron.d/crontab
-# RUN crontab /etc/cron.d/crontab
 
 COPY ./docker/supervisor/entry.bash /usr/sbin
 RUN chmod 777 /usr/sbin/entry.bash
