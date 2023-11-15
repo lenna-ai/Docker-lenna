@@ -4,13 +4,12 @@ RUN mkdir -p /var/log/supervisor/
 
 RUN apk --no-cache add postgresql-dev
 
-
 RUN apk update
 
 RUN set -eux; \
-    apk upgrade -y; \
+    apk upgrade; \
     apk update; \
-    apk install -y\
+    apk install\
         libzip-dev \
         zip \
         unzip \
@@ -31,10 +30,7 @@ RUN set -eux; \
         libonig-dev; \
         rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-install \
-        gd pdo pdo_pgsql pgsql pdo_mysql zip sockets bcmath opcache\
-    && docker-php-ext-enable \
-        gd pdo pdo_pgsql pgsql pdo_mysql zip sockets  bcmath opcache
+RUN docker-php-ext-install pdo pdo_pgsql pgsql
 
 RUN apk update && apk add --no-cache supervisor
 
