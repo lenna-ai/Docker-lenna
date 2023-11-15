@@ -9,7 +9,7 @@ RUN apk update
 RUN set -eux; \
     apk add --no-cache upgrade; \
     apk update; \
-    apk add --no-cache install\
+    apk add --no-cache\
         libzip-dev \
         zip \
         unzip \
