@@ -15,7 +15,6 @@ RUN set -eux; \
         unzip \
         supervisor \
         git \
-        zlib1g-dev \
         curl \
         libmemcached-dev \
         libpq-dev \
