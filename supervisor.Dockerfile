@@ -5,12 +5,12 @@ RUN mkdir -p /var/log/supervisor/
 RUN apk --no-cache add postgresql-dev
 
 
-RUN apt-get update
+RUN apk update
 
 RUN set -eux; \
-    apt-get upgrade -y; \
-    apt-get update; \
-    apt-get install -y\
+    apk upgrade -y; \
+    apk update; \
+    apk install -y\
         libzip-dev \
         zip \
         unzip \
