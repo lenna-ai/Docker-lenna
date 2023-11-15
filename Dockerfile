@@ -66,14 +66,14 @@ RUN chmod -R 777 /var/www
 
 # RUN composer install -d=/var/www/backend
 
-USER www-data
-
 COPY ./docker/supervisor/mycronjob.txt /etc/cron.d/crontab
 RUN chown -R www-data:www-data /etc/cron.d/crontab
 RUN chown www-data:www-data /etc/cron.d/crontab
 RUN chmod -R 777 /etc/cron.d/crontab
 RUN crontab /etc/cron.d/crontab
 RUN touch /var/log/cron.log
+
+USER www-data
 
 EXPOSE 9000
 # CMD ["php-fpm"]
