@@ -14,9 +14,16 @@ RUN set -eux; \
     apt-get update; \
     apt-get install -y\
         cron \
+        build-essential \
+        libjpeg62-turbo-dev \
+        libfreetype6-dev \
+        locales \
         libzip-dev \
         zip \
+        jpegoptim optipng pngquant gifsicle \
+        vim \
         unzip \
+        graphviz \
         supervisor \
         git \
         zlib1g-dev \
@@ -31,10 +38,16 @@ RUN set -eux; \
         libwebp-dev \
         libxpm-dev \
         libmcrypt-dev \
-        libonig-dev; \
-        rm -rf /var/lib/apt/lists/*
+        libonig-dev;
 
 # RUN apt-get install libgmp-dev
+
+RUN apt-get update && \
+    apt-get install -y libmagickwand-dev --no-install-recommends && \
+    pecl install imagick && \
+    docker-php-ext-enable imagick
+
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # RUN apt-get install -y php-dev
 RUN apt-get install autoconf
@@ -46,7 +59,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 
 RUN docker-php-ext-install \
-        gd pdo pdo_pgsql pgsql pdo_mysql zip sockets bcmath opcache\
+        gd pdo pdo_pgsql pgsql pdo_mysql zip sockets exif pcntl bcmath opcache\
     && docker-php-ext-enable \
         gd pdo pdo_pgsql pgsql pdo_mysql zip sockets  bcmath opcache
 
