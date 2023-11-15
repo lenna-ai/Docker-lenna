@@ -66,7 +66,7 @@ RUN chmod -R 777 /var/www
 
 # RUN composer install -d=/var/www/backend
 
-RUN echo "* * * * * php /var/www/cms/index.php Extreport generatechat" >> /etc/crontab
+RUN echo "* * * * * php /var/www/cms/index.php Extreport generatechat >> /var/log/cron.log 2>&1" >> /etc/crontab
 
 RUN touch /var/log/cron.log
 
