@@ -21,13 +21,17 @@
     "publishPresence": true
   },
   "devMode": false,
-  "host": null,
-  "port": 6001,
-  "protocol": "http",
-  "sslCertPath": "",
-  "sslKeyPath": "",
-  "sslCertChainPath": "",
-  "sslPassphrase": "",
-  "socketio": {},
-  "subscribers": {"http": true, "redis": true}
+    "host": null,
+    "port": "6001",
+    "protocol": "http",
+    "socketio": {},
+    "secureOptions": 67108864,
+    "sslCertPath": "",
+    "sslKeyPath": "",
+    "sslCertChainPath": "",
+    "sslPassphrase": "",
+    "subscribers": {
+        "http": true,
+        "redis": true
+    }
 }
