@@ -30,7 +30,7 @@ services:
 
   certbot:
     image: certbot/certbot:latest
-    command: certonly --webroot -w /var/www/certbot --force-renewal --email arifin@lenna.ai -d prod.finclusion.id --agree-tos
+    command: certonly --webroot -w /var/www/certbot --force-renewal --email arifin@lenna.ai -d dev01.finclusion.id --agree-tos
     volumes:
       - ./docker/certbot/www:/var/www/certbot
       - /etc/letsencrypt/:/etc/letsencrypt
