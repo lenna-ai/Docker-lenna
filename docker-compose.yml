@@ -47,6 +47,7 @@ services:
     volumes:
       - ${VOLUMES_DRIVER}/:/var/www/
       - ./docker/php/7.4/php.ini:/usr/local/etc/php/php.ini
+      - ./docker/php/7.4/www.conf:/usr/local/etc/php-fpm.d/www.conf
     environment:
       - PHP_DATE_TIMEZONE=Asia/Jakarta
       - PHP_DISPLAY_ERRORS=On
